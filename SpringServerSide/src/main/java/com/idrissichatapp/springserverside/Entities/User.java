@@ -1,14 +1,17 @@
-package com.idrissichatapp.springserverside.Entity;
+package com.idrissichatapp.springserverside.Entities;
 
-import com.idrissichatapp.springserverside.Entity.Enum.Status;
+import com.idrissichatapp.springserverside.Entities.Enum.Status;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
 @Table(name = "Users")
+@Data @NoArgsConstructor @AllArgsConstructor
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,5 +26,4 @@ public class User {
     List<ChatRoom> chatroomUser;
     @ManyToMany(mappedBy = "adminsUsers")
     List<ChatRoom> chatroomAdmin;
-
 }
