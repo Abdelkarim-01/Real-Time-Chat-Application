@@ -9,6 +9,5 @@ import java.util.List;
 public class ChatRoomDTO {
     Long id;
     String roomName;
-    List<User> normalUsers;
-    List<User> adminsUsers;
+    String roomDescription;
 }

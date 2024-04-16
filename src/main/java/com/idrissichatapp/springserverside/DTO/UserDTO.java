@@ -15,6 +15,4 @@ public class UserDTO {
     String lastName;
     LocalDateTime lastSeen;
     Status status;
-    List<ChatRoom> chatroomUser;
-    List<ChatRoom> chatroomAdmin;
 }
