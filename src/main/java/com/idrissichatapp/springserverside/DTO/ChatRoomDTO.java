@@ -1,9 +1,6 @@
 package com.idrissichatapp.springserverside.DTO;
 
 import com.idrissichatapp.springserverside.Entities.User;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
 import lombok.Data;
 
 import java.util.List;
