@@ -1,27 +1,31 @@
 package com.idrissichatapp.springserverside.Entities;
 
-import com.idrissichatapp.springserverside.Entities.Enum.Status;
+import com.idrissichatapp.springserverside.Entities.Enum.Type;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Entity
-@Table(name = "users")
+@Table(name = "chatroom_membership")
 @Data @NoArgsConstructor @AllArgsConstructor
-public class User {
+public class ChatRoomMembership {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
-    String username;
-    String firstName;
-    String lastName;
-    LocalDateTime lastSeen;
+
+    @ManyToOne
+    @JoinColumn(name = "chatRoom_id")
+    ChatRoom chatRoom;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    User user;
+
     @Enumerated(EnumType.STRING)
-    Status status;
-    @OneToMany(mappedBy = "user")
-    List<ChatRoomMembership> chatRoomMemberships;
+    Type type;
+
+    LocalDateTime dateJoined;
 }
