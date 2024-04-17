@@ -47,7 +47,9 @@ public class MessageServiceImp implements MessageService {
         messageDTO.setContent(message.getContent());
         messageDTO.setTime(message.getTime());
         messageDTO.setSenderUserId(message.getSenderUser().getId());
+        messageDTO.setSenderUserName(message.getSenderUser().getUsername());
         messageDTO.setReceivedUserId(message.getReceivedUser().getId());
+        messageDTO.setReceivedUserName(message.getReceivedUser().getUsername());
         messageDTO.setChatRoomId(message.getChatRoom().getId());
         return messageDTO;
     }

@@ -11,6 +11,8 @@ public class MessageDTO {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     LocalDateTime time;
     Long senderUserId;
+    String senderUserName;
     Long receivedUserId;
+    String receivedUserName;
     Long chatRoomId;
 }
