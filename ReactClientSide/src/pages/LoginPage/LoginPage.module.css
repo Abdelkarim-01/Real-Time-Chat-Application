@@ -1,0 +1,64 @@
+.main_container{
+    background-color: rgb(235 236 231);
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.leftSide{
+    position: absolute;
+    left: 0;
+    height: 100vh;
+    width: 55vw;
+    background-color:rgb(220 221 216) ;
+}
+.main_login{
+    z-index: 2;
+    background-color: hsl(0deg 0% 100%);
+    height: 90%;
+    width: 80%;
+    border-radius: 20px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.leftLogo{
+    position: relative;
+    height: 100%;
+    background-image: url('../../assets/meeting.jpg'); 
+    background-position: center; 
+    background-size: cover;
+    z-index: 1;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.leftLogo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    opacity: 0.7;
+    z-index: -1;
+}
+.logo{
+    font-size: 130px;
+}
+.leftLogo h3{
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: Georgia, serif;
+    margin-bottom: 60px;
+}
+.leftLogo p{
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: Georgia, serif;
+    margin-bottom: 60px;
+}

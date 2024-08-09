@@ -1,0 +1,17 @@
+.MessagesRoom{
+    border-radius: 15px;
+    background-color: hsl(207.27deg 20.75% 89.61%);
+    overflow-x: auto;
+    padding-bottom: 70px;
+    position: relative;
+}
+.MessagesRoom::-webkit-scrollbar {
+    width: 3px;
+}
+.MessagesRoom::-webkit-scrollbar-track {
+    background: var(--sidebar-color);
+}
+.MessagesRoom::-webkit-scrollbar-thumb {
+    background: #6666;
+    border-radius: 10px; 
+}

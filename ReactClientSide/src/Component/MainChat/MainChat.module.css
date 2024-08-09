@@ -1,0 +1,7 @@
+.Main_Chat{
+    position: relative;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    height: 100vh;
+    background-color: var(--App-color);
+}
