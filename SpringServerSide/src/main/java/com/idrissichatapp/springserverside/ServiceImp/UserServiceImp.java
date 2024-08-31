@@ -27,4 +27,9 @@ public class UserServiceImp implements UserService {
     public void DeleteUserById(Long id) {
         userRepo.deleteById(id);
     }
+
+    @Override
+    public Optional<User>  findUserByEmail(String email) {
+        return userRepo.findUserByEmail( email );
+    }
 }

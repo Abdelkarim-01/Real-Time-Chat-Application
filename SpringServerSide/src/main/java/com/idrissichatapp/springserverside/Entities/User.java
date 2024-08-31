@@ -1,5 +1,6 @@
 package com.idrissichatapp.springserverside.Entities;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.idrissichatapp.springserverside.Entities.Enum.Status;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -16,7 +17,11 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
-    String username;
+    @Column(nullable = false, unique = true)
+    String email;
+    @Column(nullable = false)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    String password;
     String firstName;
     String lastName;
     LocalDateTime lastSeen;
