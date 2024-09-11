@@ -6,6 +6,7 @@ import com.idrissichatapp.springserverside.Repositories.ChatRoomRepo;
 import com.idrissichatapp.springserverside.Services.ChatRoomService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Optional;
 

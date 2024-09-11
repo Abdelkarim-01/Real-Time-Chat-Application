@@ -14,6 +14,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -30,7 +31,7 @@ public class CustomdAuthenticationProvider implements AuthenticationProvider {
         Optional<User> user = userRepo.findUserByEmail(email);
         if (user.isPresent()) {
             if (passwordEncoder.matches(pwd, user.get().getPassword())) {
-                return new UsernamePasswordAuthenticationToken(email, pwd);
+                return new UsernamePasswordAuthenticationToken(email, pwd , Collections.emptyList());
             } else {
                 throw new BadCredentialsException("Invalid password!");
             }

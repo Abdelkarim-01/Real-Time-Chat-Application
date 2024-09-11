@@ -18,6 +18,7 @@ import org.springframework.web.filter.OncePerRequestFilter;
 import javax.crypto.SecretKey;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.Collections;
 
 public class JWTTokenValidatorFilter extends OncePerRequestFilter {
     @Override
@@ -35,7 +36,7 @@ public class JWTTokenValidatorFilter extends OncePerRequestFilter {
                         .parseSignedClaims(jwt)
                         .getPayload();
                 String username = String.valueOf(claims.get("username"));
-                Authentication auth = new UsernamePasswordAuthenticationToken(username, null);
+                Authentication auth = new UsernamePasswordAuthenticationToken(username, null, Collections.emptyList());
                 SecurityContextHolder.getContext().setAuthentication(auth);
             } catch (Exception e) {
                 throw new BadCredentialsException("Invalid Token received!");
